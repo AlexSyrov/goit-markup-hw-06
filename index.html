@@ -17,45 +17,47 @@
   <body>
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <b class="modal-title">Оставьте свои данные, мы вам перезвоним</b>
+        <b class="modal-title">Оставьте свои данные, мы вам перезвоним:</b>
         <button class="button-close" data-modal-close>
           <svg class="close">
             <use href="./images/webstudio.svg#icon-close-black-18dp"></use>
           </svg>
         </button>
 
-        <form>
-          <label for="name">Имя</label>
-          <input type="text" name="name" id="name" />
+        <form class="form" autocomplete="off">
+          <div class="form-field">
+            <input type="text" name="name" id="name" placeholder=" " />
+            <label for="name" class="form-label">Имя</label>
+          </div>
+
+          <div class="form-field">
+            <input type="tel" name="telephone" id="tel" placeholder=" " />
+            <label for="tel" class="form-label">Телефон</label>
+          </div>
+
+          <div class="form-field">
+            <input type="email" name="email" id="mail" placeholder=" " />
+            <label for="mail" class="form-label">Почта</label>
+          </div>
+          <div class="form-field">
+            <textarea
+              name="comment"
+              rows="5"
+              cols="50"
+              placeholder="Комментарий"
+            ></textarea>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" value="agreement conditions" id="contract" />
+            <label for="contract"
+              >Соглашаюсь с рассылкой и принимаю
+              <a class="contract" href="/">Условия договора</a></label
+            >
+          </div>
+          <div class="modal-button">
+            <button class="button-secondary" type="submit">Отправить</button>
+          </div>
         </form>
-
-        <form>
-          <label for="tel">Телефон</label>
-          <input type="tel" name="telephone" id="tel" />
-        </form>
-
-        <form>
-          <label for="mail">Почта</label>
-          <input type="email" name="email" id="mail" />
-        </form>
-
-        <textarea
-          name="comment"
-          rows="5"
-          cols="45"
-          placeholder="Комментарий"
-          class="coment"
-        ></textarea>
-
-        <form>
-          <input type="checkbox" value="agreement conditions" id="contract" />
-        </form>
-        <label for="contract"
-          >Соглашаюсь с рассылкой и принимаю
-          <a class="contract" href="/">Условия договора</a></label
-        >
-
-        <button type="submit">Отправить</button>
       </div>
     </div>
     <!--Шапка-->
@@ -84,14 +86,14 @@
 
       <address class="site-nav-ad">
         <a href="mailto:info@devstudio.com" class="link">
-          <svg class="e-t-icon">
+          <svg class="e-t-icon-envelope">
             <use href="./images/webstudio.svg#icon-envelope"></use>
           </svg>
           info@devstudio.com
         </a>
 
         <a href="tel:380961111111" class="link">
-          <svg class="e-t-icon">
+          <svg class="e-t-icon-smartphone">
             <use href="./images/webstudio.svg#icon-smartphone"></use>
           </svg>
           +38 096 111 11 11
@@ -634,7 +636,7 @@
         <div>
           <p class="conecting-title">Подпишитесь на рассылку</p>
           <form>
-            <label class="form-field">
+            <label class="f-form-field">
               <input type="email" placeholder="E-mail" />
             </label>
             <button type="submit" class="button-submit">
