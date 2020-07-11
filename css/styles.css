@@ -267,11 +267,40 @@ a {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 999;
+  opacity: 1;
+  transition: opacity 250ms var(--cubic);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(1) translate(-50%, -50%);
+  transition: transform 250ms var(--cubic);
+
+  min-width: 528px;
+  min-height: 581px;
+  padding: 40px;
+
+  background-color: var(--white-color);
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+}
+.coment {
+  resize: none;
+}
+.contract {
+  text-decoration: underline;
 }
 
 .modal-title {
@@ -298,28 +327,15 @@ a {
 
 .close {
   position: absolute;
-  width: 11px;
-  height: 11px;
+  width: 18px;
+  height: 18px;
   margin: 0px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-.modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  min-width: 528px;
-  min-height: 581px;
-  padding: 40px;
-
-  background-color: var(--white-color);
-  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 1px 3px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
+.close:hover {
+  fill: var(--accent-color);
 }
 
 .list {

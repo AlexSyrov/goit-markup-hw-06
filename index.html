@@ -23,6 +23,39 @@
             <use href="./images/webstudio.svg#icon-close-black-18dp"></use>
           </svg>
         </button>
+
+        <form>
+          <label for="name">Имя</label>
+          <input type="text" name="name" id="name" />
+        </form>
+
+        <form>
+          <label for="tel">Телефон</label>
+          <input type="tel" name="telephone" id="tel" />
+        </form>
+
+        <form>
+          <label for="mail">Почта</label>
+          <input type="email" name="email" id="mail" />
+        </form>
+
+        <textarea
+          name="comment"
+          rows="5"
+          cols="45"
+          placeholder="Комментарий"
+          class="coment"
+        ></textarea>
+
+        <form>
+          <input type="checkbox" value="agreement conditions" id="contract" />
+        </form>
+        <label for="contract"
+          >Соглашаюсь с рассылкой и принимаю
+          <a class="contract" href="/">Условия договора</a></label
+        >
+
+        <button type="submit">Отправить</button>
       </div>
     </div>
     <!--Шапка-->
