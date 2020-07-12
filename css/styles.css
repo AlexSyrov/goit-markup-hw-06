@@ -368,15 +368,37 @@ textarea {
   position: relative;
 }
 
-.form-field:nth-child(4) {
+.checkbox {
+  position: absolute;
+  -webkit-appearance: none;
+}
+
+.checkbox:checked + .check-ikon {
+  background-color: var(--accent-color);
+  background-image: url(../images/modal/icon_check.svg);
+  background-size: contain;
+  border-color: var(--accent-color);
+}
+
+.checkbox-label {
+  font-size: 14px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
 }
 
-.checkbox {
-  font-size: 14px;
-  margin-bottom: 30px;
-  text-align: center;
+.check-ikon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
+  margin-right: 7px;
+  background-origin: border-box;
 }
+
 .form-field input {
   width: 100%;
   margin: 0;
@@ -384,6 +406,10 @@ textarea {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   height: 40px;
+  transition: border 250ms var(--cubic);
+}
+.form-field input:hover {
+  border: 1px solid var(--accent-color);
 }
 
 .form-field textarea {
@@ -392,6 +418,10 @@ textarea {
   padding: 16px 12px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  transition: border 250ms var(--cubic);
+}
+.form-field textarea:hover {
+  border: 1px solid var(--accent-color);
 }
 
 .form-field input:hover + .form-label,
@@ -401,12 +431,44 @@ textarea {
   color: var(--accent-color);
 }
 
+.form-field textarea:hover + .form-label-comment,
+.form-field textarea:not(:placeholder-shown) + .form-label-comment,
+.form-field textarea:focus + .form-label-comment {
+  transform: translate(-5px, -47px);
+  color: var(--accent-color);
+}
+
 .form-label {
   position: absolute;
   top: 50%;
   left: 42px;
   transform: translateY(-50%);
   transition: transform 250ms var(--cubic), color 250ms var(--cubic);
+}
+
+.form-label-comment {
+  position: absolute;
+  top: 20%;
+  left: 16px;
+  transform: translateY(-50%);
+  transition: transform 250ms var(--cubic), color 250ms var(--cubic);
+}
+
+.icon-modal {
+  position: absolute;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  fill: var(--title-text-color);
+  transition: fill 250ms var(--cubic);
+}
+
+.form-field input:hover ~ .icon-modal,
+.form-field input:focus ~ .icon-modal {
+  fill: var(--accent-color);
 }
 
 .list {
